@@ -1,15 +1,20 @@
 import java.io.File;
+import java.util.*;
+
 import java.util.Scanner;
 
 public class InsSortInt {
 
 	public static void main(String[] args) throws Exception {
 		Scanner sc = new Scanner(new File("randInts.txt"));
-		int[] vals = new int[1000];
-		for(int i = 0; i < 1000; i++) {
-			vals[i] = sc.nextInt();
+		ArrayList<Integer> temp = new ArrayList<Integer>();
+		while(sc.hasNextLine()){
+			temp.add(Integer.parseInt(sc.nextLine()));
 		}
-		
+		int[] vals = new int[temp.size()];
+		for(int i = 0; i < temp.size(); i++) {
+			vals[i] = temp.get(i);
+		}
 		for(int i = 1; i < 1000; i++) {
 			int key = vals[i];
 			int j = i - 1;
