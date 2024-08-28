@@ -15,6 +15,15 @@ public class InsSortInt {
 		for(int i = 0; i < temp.size(); i++) {
 			vals[i] = temp.get(i);
 		}
+	
+		InsSort(vals);
+		
+		System.out.println("Smallest: "+ vals[0] + " Largest: " + vals[999]);
+		sc.close();
+	}
+	
+	public static void InsSort(int[] vals){
+		
 		for(int i = 1; i < 1000; i++) {
 			int key = vals[i];
 			int j = i - 1;
@@ -24,9 +33,6 @@ public class InsSortInt {
 			}
 			vals[j+1] = key;
 		}
-		
-		System.out.println("Smallest: "+ vals[0] + " Largest: " + vals[999]);
-		sc.close();
 	}
 
 }
